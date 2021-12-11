@@ -1,0 +1,167 @@
+@import "null.scss";
+@import "variables.scss";
+@import "mixins.scss";
+
+@font-face {
+  font-family: "Gilroy Medium";
+  src: url("../fonts/Gilroy-Medium.woff2") format("woff2"),
+    url("../fonts/Gilroy-Medium.woff") format("woff"),
+    url("../fonts/Gilroy-Medium.ttf") format("ttf");
+}
+
+@font-face {
+  font-family: "Gilroy Bold";
+  src: url("../fonts/Gilroy-Bold.woff2") format("woff2"),
+    url("../fonts/Gilroy-Bold.woff") format("woff"),
+    url("../fonts/Gilroy-Bold.ttf") format("ttf");
+}
+
+:root {
+  font-size: $mainFont;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+body {
+  font-family: "Gilroy Bold", sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+.container {
+  @include container(945px);
+}
+
+.header {
+  margin-bottom: 2em;
+}
+
+.subtitle {
+  font-size: 2rem;
+  line-height: 1.2;
+}
+
+.item--lang {
+  display: none;
+}
+
+.nav__menu {
+  list-style: none;
+  padding: 1.7em 0;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba($color: $stc, $alpha: 0.5);
+}
+
+.header__content {
+  margin: 1.5em 0;
+  display: flex;
+  justify-content: space-between;
+  .content__name {
+    @include text(2.5rem, 59px);
+    flex-basis: 4em;
+  }
+  .content__info {
+    font-family: "Gilroy Medium", sans-serif;
+    align-self: flex-end;
+  }
+  .content__togglers {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    gap: 0.2em;
+    .toggler {
+      transform: rotate(-90deg);
+      background-color: transparent;
+      border: none;
+      text-transform: uppercase;
+    }
+    .toggler--slash {
+      margin: 0 auto;
+    }
+    .toggler--text {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+
+//about
+.about {
+  background-color: $evenBack;
+  .about__inner {
+    padding: 6.7em 0;
+    text-align: center;
+    .about__title {
+      margin-bottom: 1em;
+    }
+    .about__info {
+      margin-bottom: 3em;
+    }
+  }
+}
+
+///portfolio
+.portfolio__inner {
+  padding: 6.7em 0;
+  text-align: center;
+  .portfolio__title {
+    margin-bottom: 1em;
+  }
+  .portfolio__block {
+    margin-bottom: 3em;
+    .block__image {
+      margin-bottom: 2em;
+    }
+    .block__link {
+      font-family: "Gilroy Medium", sans-serif;
+    }
+  }
+}
+
+//footer
+.footer {
+  background-color: $evenBack;
+}
+.footer__inner {
+  text-align: center;
+  padding: 6.7em 0;
+  .footer__upper {
+    margin-bottom: 3em;
+    .footer__title {
+      margin-bottom: 1em;
+    }
+    .footer__desc {
+      font-family: "Gilroy Medium", sans-serif;
+      margin-bottom: 1em;
+    }
+    .footer__desc:last-of-type {
+      margin-bottom: 2em;
+    }
+    .footer__link {
+      background-color: $mtc;
+      color: $fwhite;
+      padding: 0.7em 2.5em;
+      border-radius: 50px;
+    }
+  }
+  .footer__message {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 5em;
+    margin-bottom: 2em;
+  }
+  .footer__write {
+    font-family: "Gilroy Medium", sans-serif;
+    color: $stc;
+  }
+}

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="shortcut icon" href="" type="image/x-icon" />
+    <title>New Project</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+
+  <body>
+    <header id="header" class="header">
+      <div class="container">
+        <div class="header__inner">
+          <div class="header__nav">
+            <ul class="nav__menu">
+              <li class="menu__item">
+                <a href="#" class="menu__link">Home</a>
+              </li>
+              <li class="menu__item">
+                <a href="#" class="menu__link">About me</a>
+              </li>
+              <li class="menu__item">
+                <a href="#" class="menu__link">Portfolio</a>
+              </li>
+              <li class="menu__item">
+                <a href="#" class="menu__link">Contacts</a>
+              </li>
+              <li class="menu__item item--lang">
+                <button class="content__toggler toggler--ru">ru</button>
+                <button class="content__toggler toggler--en">eng</button>
+              </li>
+            </ul>
+          </div>
+          <div class="header__content">
+            <div class="content__name">Mihail Ruckiy</div>
+            <div class="content__info">
+              <p class="info__profession">
+                Layout designer, Frontend-developer
+              </p>
+              <p class="info__location">22 years old, Minsk</p>
+            </div>
+            <div class="content__togglers">
+              <button class="toggler toggler--en">eng</button>
+              <span class="toggler toggler--slash">|</span>
+              <button class="toggler toggler--ru">ru</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main id="main" class="main">
+      <section id="about" class="about">
+        <div class="container">
+          <div class="about__inner">
+            <h2 class="about__title subtitle">About me</h2>
+            <p class="about__info">
+              Hi, I'm Mihail – Layout designer and Frontend-developer from
+              Minsk.
+            </p>
+            <p class="about__info">
+              I'm a beginner developer who dreams of doing interesting projects
+            </p>
+            <p class="about__info">
+              I will be glad if you take a closer look at my works and order my
+              services
+            </p>
+          </div>
+        </div>
+      </section>
+      <section id="portfolio" class="portfolio">
+        <div class="container">
+          <div class="portfolio__inner">
+            <h2 class="portfolio__title subtitle">Portfolio</h2>
+            <div class="portfolio__block">
+              <picture class="block__image">
+                <source
+                  media="(max-width:768px)"
+                  srcset="images/clerksy__mobile.webp"
+                />
+                <source srcset="images/clerksy__image.webp" />
+                <img src="images/clerksy__image.jpg" alt="clerksy__image" />
+              </picture>
+              <a href="#" class="block__link">Clerksy — HR-outsourcing</a>
+            </div>
+            <div class="portfolio__block">
+              <picture class="block__image">
+                <source
+                  media="(max-width:768px)"
+                  srcset="images/ugmonk__mobile.webp"
+                />
+                <source srcset="images/ugmonk__image.webp" />
+                <img src="images/ugmonk__image.jpg" alt="ugmonk__image" />
+              </picture>
+              <a href="#" class="block__link">Ugmonk — Brand-shop</a>
+            </div>
+            <div class="portfolio__block">
+              <picture class="block__image">
+                <source
+                  media="(max-width:768px )"
+                  srcset="images/logoipsum__mobile.webp"
+                />
+                <source srcset="images/logoipsum__image.webp" />
+                <img src="images/logoipsum__image.jpg" alt="logoipsum__image" />
+              </picture>
+              <a href="#" class="block__link">Logoipsum — Logo-service</a>
+            </div>
+            <div class="portfolio__block">
+              <picture class="block__image">
+                <source
+                  media="(max-width:768px )"
+                  srcset="images/diplex__mobile.webp"
+                />
+                <source srcset="images/diplex__image.webp" />
+                <img src="images/diplex__image.jpg" alt="diplex__image" />
+              </picture>
+              <a href="#" class="block__link">Diplex — Crypto-trading</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="container">
+        <div class="footer__inner">
+          <div class="footer__upper">
+            <h2 class="footer__title subtitle">Contacts</h2>
+            <p class="footer__desc">Want to know more or just chat?</p>
+            <p class="footer__desc">You are welcome!</p>
+            <a href="#" class="footer__link">Send message</a>
+          </div>
+          <ul class="footer__message">
+            <li class="message__item">
+              <a href="#" class="message__link"
+                ><img
+                  src="images/telegram-svg.svg"
+                  alt="telegram"
+                  class="message__img"
+              /></a>
+            </li>
+            <li class="message__item">
+              <a href="#" class="message__link"
+                ><img
+                  src="images/email-svg.svg"
+                  alt="email"
+                  class="message__img"
+              /></a>
+            </li>
+          </ul>
+          <p class="footer__write">Contact me via Telegram or Email</p>
+        </div>
+      </div>
+    </footer>
+    <script src="js/main.js"></script>
+  </body>
+</html>
