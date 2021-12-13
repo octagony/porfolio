@@ -61,10 +61,20 @@ body {
   border-bottom: 1px solid rgba($color: $stc, $alpha: 0.5);
 }
 
+.menu__link::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 2px;
+  background-color: $fblack;
+  transition: width 0.3s ease-in-out;
+}
+
 .header__content {
   margin: 1.5em 0;
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
   .content__name {
     @include text(2.5rem, 59px);
     flex-basis: 4em;
@@ -72,25 +82,7 @@ body {
   .content__info {
     font-family: "Gilroy Medium", sans-serif;
     align-self: flex-end;
-  }
-  .content__togglers {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    gap: 0.2em;
-    .toggler {
-      transform: rotate(-90deg);
-      background-color: transparent;
-      border: none;
-      text-transform: uppercase;
-    }
-    .toggler--slash {
-      margin: 0 auto;
-    }
-    .toggler--text {
-      width: 100%;
-      height: 100%;
-    }
+    margin-top: 1em;
   }
 }
 
@@ -123,6 +115,31 @@ body {
     }
     .block__link {
       font-family: "Gilroy Medium", sans-serif;
+      padding: 1rem 1.25rem;
+      position: relative;
+      transition: all 0.3s cubic-bezier(0.2, 0, 0, 1);
+      z-index: 1;
+      &:after {
+        content: "";
+        display: block;
+        height: 2px;
+        position: absolute;
+        bottom: 0;
+        right: 1.25rem;
+        left: 1.25rem;
+        background-color: $fblack;
+        transition: all 0.3s cubic-bezier(0.2, 0, 0, 1);
+        transform-origin: bottom center;
+        z-index: -1;
+      }
+      &:hover {
+        color: $fwhite;
+        &:after {
+          right: 0;
+          left: 0;
+          height: 100%;
+        }
+      }
     }
   }
 }
@@ -151,6 +168,8 @@ body {
       color: $fwhite;
       padding: 0.7em 2.5em;
       border-radius: 50px;
+      transition: all 0.3s ease-in-out;
+      display: inline-block;
     }
   }
   .footer__message {
@@ -163,5 +182,117 @@ body {
   .footer__write {
     font-family: "Gilroy Medium", sans-serif;
     color: $stc;
+  }
+  .message__img {
+    transition: all 0.3s ease-in-out;
+  }
+}
+
+[type="checkbox"] {
+  display: none;
+}
+
+@media (any-hover) {
+  .menu__link:hover:after {
+    width: 100%;
+    transition: width 0.3s ease-in-out;
+  }
+  .message__img:hover,
+  .footer__link:hover {
+    transform: scale(1.2);
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .container {
+    max-width: 720px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    max-width: 540px;
+  }
+
+  .header__nav {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    height: 100%;
+    width: 100%;
+    background: rgba($color: $fblack, $alpha: 1);
+    transition: all 0.5s ease-in-out;
+    .menu__item {
+      color: $fwhite;
+    }
+  }
+  .nav__menu {
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    justify-content: space-around;
+  }
+  #active:checked ~ .header__nav {
+    right: 0;
+    .nav__menu {
+      flex-direction: column;
+      align-items: center;
+      height: 100%;
+    }
+  }
+
+  #active:checked + .menu__btn span {
+    transform: scale(0);
+  }
+  #active:checked + .menu__btn::before {
+    border-color: $fwhite;
+    transform: rotate(45deg);
+  }
+  #active:checked + .menu__btn::after {
+    border-color: $fwhite;
+    transform: rotate(-45deg);
+  }
+
+  .menu__btn {
+    position: absolute;
+    z-index: 2;
+    right: 0px;
+    top: 10px;
+    height: 50px;
+    width: 50px;
+    text-align: center;
+    border-radius: 50%;
+    font-size: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .menu__btn span,
+  .menu__btn:before,
+  .menu__btn:after {
+    content: "";
+    position: absolute;
+    top: calc(50% - 1px);
+    left: 30%;
+    width: 40%;
+    border-bottom: 2px solid #000;
+    transition: transform 0.6s cubic-bezier(0.215, 0.61, 0.355, 1);
+  }
+  .menu__btn:before {
+    transform: translateY(-8px);
+  }
+  .menu__btn:after {
+    transform: translateY(8px);
+  }
+  .about .about__inner,
+  .portfolio__inner,
+  .footer__inner {
+    padding: 3em 0;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .container {
+    max-width: 100%;
   }
 }
