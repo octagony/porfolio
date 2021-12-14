@@ -22,6 +22,7 @@
 
 html {
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 a {
@@ -220,23 +221,25 @@ body {
     right: -100%;
     height: 100%;
     width: 100%;
-    background: rgba($color: $fblack, $alpha: 1);
+    background: rgba($color: $fwhite, $alpha: 1);
+    z-index: 2;
     transition: all 0.5s ease-in-out;
     .menu__item {
-      color: $fwhite;
+      color: $fblack;
     }
   }
   .nav__menu {
     flex-direction: column;
-    align-items: center;
     height: 100%;
-    justify-content: space-around;
+    justify-content: flex-start;
+    font-size: 2rem;
+    gap: 2em;
+    margin-left: 1em;
   }
   #active:checked ~ .header__nav {
     right: 0;
     .nav__menu {
       flex-direction: column;
-      align-items: center;
       height: 100%;
     }
   }
@@ -245,17 +248,16 @@ body {
     transform: scale(0);
   }
   #active:checked + .menu__btn::before {
-    border-color: $fwhite;
+    border-color: $fblack;
     transform: rotate(45deg);
   }
   #active:checked + .menu__btn::after {
-    border-color: $fwhite;
+    border-color: $fblack;
     transform: rotate(-45deg);
   }
 
   .menu__btn {
     position: absolute;
-    z-index: 2;
     right: 0px;
     top: 10px;
     height: 50px;
@@ -264,6 +266,7 @@ body {
     border-radius: 50%;
     font-size: 20px;
     cursor: pointer;
+    z-index: 3;
     transition: all 0.3s ease-in-out;
   }
 
